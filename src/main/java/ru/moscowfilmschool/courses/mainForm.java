@@ -78,8 +78,7 @@ public class mainForm {
             "    ']"));
 
     // Я подтверждаю
-    private final SelenideElement iAcceptCheckBox = $(byXpath("//*[@id=\"request-modal\"]/div[3]/div[3]/div/form/div/" +
-            "div[5]/label"));
+    private final SelenideElement iAcceptCheckBox = $(byXpath(".//div[5]//label"));
 
     // клик
     public void clickIAcceptCheckBox() {
@@ -87,8 +86,7 @@ public class mainForm {
     }
 
     // я согласен
-    private final SelenideElement iAgreeCheckBox = $(byXpath("//*[@id=\"request-modal\"]/div[3]/div[3]/div/form/div/" +
-            "div[7]/label/span[1]"));
+    private final SelenideElement iAgreeCheckBox = $(byXpath(".//div[7]//label//span[1]"));
 
     // клик
     public void clickIAgreeCheckBox() {
