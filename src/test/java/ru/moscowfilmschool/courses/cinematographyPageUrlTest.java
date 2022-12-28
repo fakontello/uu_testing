@@ -29,7 +29,24 @@ public class cinematographyPageUrlTest {
         openMainForm.waitForLoadFeelButton();
         openMainForm.clickFeelButton();
         openMainForm.waitForLoadFormPage();
-        openMainForm.mainFormPageFiller("тест", "тест", "тест");
+        openMainForm.personalDataFiller("тест", "тест", "тест", "11111111");
+        openMainForm.clickSexChoose();
+        openMainForm.contactsDataFiller("asd@asd.as", "asd@asd.as", "9151231111", "мск");
+        openMainForm.clickNextStepButton();
+        openMainForm.waitForLoadGraduatePage();
+        openMainForm.clickNoUUStudy();
+        openMainForm.clickMiddleGraduate();
+        openMainForm.clickSecondNextStepButton();
+        openMainForm.waitForLoadMotivationPage();
+        openMainForm.motivationDataFiller("тест тест тест");
+        openMainForm.clickThirdNextStepButton();
+        openMainForm.waitForLoadAdditionalPage();
+        openMainForm.clickIAcceptCheckBox();
+        openMainForm.clickIAgreeCheckBox();
+        openMainForm.clickNotBeingOnOpenDoorsDayCheck();
+        openMainForm.clickNotBeingOnParties();
+        openMainForm.clickSendingButton();
+        openMainForm.waitForLoadSendingPage();
 
     }
 }
