@@ -93,6 +93,23 @@ public class mainForm {
         iAgreeCheckBox.click();
     }
 
+    // я подтверждаю шоураннер
+    private final SelenideElement iAcceptShowCheckBox = $(byXpath("//*[@id=\"request-modal\"]/div[3]/div[3]/div/form/" +
+            "div/div[3]/label"));
+
+    // клик
+    public void clickIAcceptShowCheckBox() {
+        iAcceptShowCheckBox.click();
+    }
+
+    // я согласен шоураннер
+    private final SelenideElement iAgreeShowCheckBox = $(byXpath(".//div[5]//label//span[1]"));
+
+    // клик
+    public void clickIAgreeShowCheckBox() {
+        iAgreeShowCheckBox.click();
+    }
+
     // кнопка "Отправить"
     private final SelenideElement sendingButton = $(byXpath("//*[@id=\"request-modal\"]/div[4]/button"));
 
@@ -103,6 +120,9 @@ public class mainForm {
 
     // елемент страницы отправленной заявки
     private final SelenideElement sendingPageElement = $(byClassName("request-done__desc"));
+
+    // елемент страницы отправленной заявки шоураннер
+    private final SelenideElement sendingPageShowElement = $(byClassName("request-done__title"));
 
     // метод клика по кнопке "Подать заявку"
     public void clickPlaceOrder() {
@@ -210,6 +230,13 @@ public class mainForm {
         setCityField(city);
     }
 
+    // метод заполнения контактной информации showrunner
+    public void contactsShowDataFiller(String email, String emailConfirm, String phone) {
+        setEmailField(email);
+        setEmailConfirmField(emailConfirm);
+        setPhoneField(phone);
+    }
+
     // метод заполнения поля Мотивация
     public void setMotivationField(String motivation) {
         motivationField.setValue(motivation);
@@ -253,6 +280,11 @@ public class mainForm {
     // метод ожидания страницы отправленной заявки
     public void waitForLoadSendingPage() {
         sendingPageElement.shouldBe(Condition.visible);
+    }
+
+    // метод ожидания страницы отправленной заявки
+    public void waitForLoadShowSendingPage() {
+        sendingPageShowElement.shouldBe(Condition.visible);
     }
 
 }

@@ -6,15 +6,15 @@ import org.junit.Before;
 import org.junit.Test;
 
 import static com.codeborne.selenide.Selenide.open;
-import static ru.moscowfilmschool.courses.Urls.cinematographyPageUrl;
+import static ru.moscowfilmschool.courses.Urls.showrunnerPageUrl;
 
-public class cinematographyPageUrlTest {
+public class ShowrunnerPageUrlTest {
 
     private mainForm openMainForm;
 
     @Before
     public void preconditions() {
-        openMainForm = open(cinematographyPageUrl, mainForm.class);
+        openMainForm = open(showrunnerPageUrl, mainForm.class);
         openMainForm.waitForLoadPage();
     }
 
@@ -31,22 +31,13 @@ public class cinematographyPageUrlTest {
         openMainForm.waitForLoadFormPage();
         openMainForm.personalDataFiller("тест", "тест", "тест", "11111111");
         openMainForm.clickSexChoose();
-        openMainForm.contactsDataFiller("asd@asd.as", "asd@asd.as", "9151231111", "мск");
+        openMainForm.contactsShowDataFiller("asd@asd.as", "asd@asd.as", "9151231111");
         openMainForm.clickNextStepButton();
         openMainForm.waitForLoadGraduatePage();
-        openMainForm.clickNoUUStudy();
-        openMainForm.clickMiddleGraduate();
-        openMainForm.clickSecondNextStepButton();
-        openMainForm.waitForLoadMotivationPage();
-        openMainForm.motivationDataFiller("тест тест тест");
-        openMainForm.clickThirdNextStepButton();
-        openMainForm.waitForLoadAdditionalPage();
-        openMainForm.clickIAcceptCheckBox();
-        openMainForm.clickIAgreeCheckBox();
-        openMainForm.clickNotBeingOnOpenDoorsDayCheck();
-        openMainForm.clickNotBeingOnParties();
+        openMainForm.clickIAgreeShowCheckBox();
+        openMainForm.clickIAcceptShowCheckBox();
         openMainForm.clickSendingButton();
-        openMainForm.waitForLoadSendingPage();
+        openMainForm.waitForLoadShowSendingPage();
 
     }
 }
