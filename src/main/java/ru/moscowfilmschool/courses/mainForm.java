@@ -29,6 +29,9 @@ public class mainForm {
     // поле Имейл
     private final SelenideElement emailField = $(byName("6291cd7a-d508-531e-6e6d-cd5a4a3701cc"));
 
+    // значение Имейл
+    public static final String actualEmail = "nikakrochik@gmail.com";
+
     // поле Подтверждение имейла
     private final SelenideElement emailConfirmField = $(byName("6291cd7a-d508-531e-6e6d-cd5a4a3701cc-confirm"));
 
