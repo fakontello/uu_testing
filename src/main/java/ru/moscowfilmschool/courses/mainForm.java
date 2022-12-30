@@ -2,9 +2,9 @@ package ru.moscowfilmschool.courses;
 
 import com.codeborne.selenide.SelenideElement;
 import com.codeborne.selenide.Condition;
+
 import static com.codeborne.selenide.Selectors.*;
 import static com.codeborne.selenide.Selenide.$;
-
 
 public class mainForm {
 
@@ -113,10 +113,10 @@ public class mainForm {
         iAgreeShowCheckBox.click();
     }
 
-    // кнопка "Отправить"
+    // кнопка "Отправить" шоураннер
     private final SelenideElement sendingButton = $(byXpath("//*[@id=\"request-modal\"]/div[4]/button"));
 
-    // click
+    // клик
     public void clickSendingButton() {
         sendingButton.click();
     }
@@ -285,7 +285,7 @@ public class mainForm {
         sendingPageElement.shouldBe(Condition.visible);
     }
 
-    // метод ожидания страницы отправленной заявки
+    // метод ожидания страницы отправленной заявки шоураннер
     public void waitForLoadShowSendingPage() {
         sendingPageShowElement.shouldBe(Condition.visible);
     }
