@@ -6,16 +6,16 @@ import org.junit.Before;
 import org.junit.Test;
 
 import static com.codeborne.selenide.Selenide.open;
-import static ru.moscowfilmschool.courses.Urls.settingPageUrl;
+import static ru.moscowfilmschool.courses.Urls.showrunnerPageUrl;
 import static ru.moscowfilmschool.courses.mainForm.actualEmail;
 
-public class SettingPageUrlTest {
+public class ShowrunnerPageTest {
 
     private mainForm openMainForm;
 
     @Before
     public void preconditions() {
-        openMainForm = open(settingPageUrl, mainForm.class);
+        openMainForm = open(showrunnerPageUrl, mainForm.class);
         openMainForm.waitForLoadPage();
     }
 
@@ -25,29 +25,19 @@ public class SettingPageUrlTest {
     }
 
     @Test
-    public void feelMainFormTest() {
+    public void feelMainForm() {
         openMainForm.clickPlaceOrder();
         openMainForm.waitForLoadFeelButton();
         openMainForm.clickFeelButton();
         openMainForm.waitForLoadFormPage();
         openMainForm.personalDataFiller("тест", "тест", "тест", "11111111");
         openMainForm.clickSexChoose();
-        openMainForm.contactsDataFiller(actualEmail, actualEmail, "9151231111", "мск");
+        openMainForm.contactsShowDataFiller(actualEmail, actualEmail, "9151231111");
         openMainForm.clickNextStepButton();
         openMainForm.waitForLoadGraduatePage();
-        openMainForm.clickNoUUStudy();
-        openMainForm.clickMiddleGraduate();
-        openMainForm.clickSecondNextStepButton();
-        openMainForm.waitForLoadMotivationPage();
-        openMainForm.motivationDataFiller("тест тест тест");
-        openMainForm.clickThirdNextStepButton();
-        openMainForm.waitForLoadAdditionalPage();
-        openMainForm.clickIAcceptCheckBox();
-        openMainForm.clickIAgreeCheckBox();
-        openMainForm.clickNotBeingOnOpenDoorsDayCheck();
-        openMainForm.clickNotBeingOnParties();
+        openMainForm.clickIAgreeShowCheckBox();
+        openMainForm.clickIAcceptShowCheckBox();
         openMainForm.clickSendingButton();
-        openMainForm.waitForLoadSendingPage();
-
+        openMainForm.waitForLoadShowSendingPage();
     }
 }
