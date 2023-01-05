@@ -125,7 +125,8 @@ public class mainForm {
     private final SelenideElement sendingPageElement = $(byClassName("request-done__desc"));
 
     // елемент страницы отправленной заявки шоураннер
-    private final SelenideElement sendingPageShowElement = $(byClassName("request-done__title"));
+    private final SelenideElement sendingPageShowElement =
+            $(byXpath("//*[@id=\"request-done-modal\"]/div[2]/div[1]"));
 
     // метод клика по кнопке "Подать заявку"
     public void clickPlaceOrder() {
